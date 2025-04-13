@@ -1,4 +1,4 @@
-import 'HomeRoute.css'
+import './HomeRoute.css'
 
 const HomeRoute = () => {
   return (
