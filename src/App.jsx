@@ -14,6 +14,7 @@ function App() {
 
   useEffect(() => {
     getApps()
+    console.log(apps)
   })
 
   return (
