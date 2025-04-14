@@ -11,7 +11,6 @@ function App() {
   
   const getApps = async () => {
     const apps = await getAllApps()
-    console.log('hi')
     setApps(apps)
   }
 

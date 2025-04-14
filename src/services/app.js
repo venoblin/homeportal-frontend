@@ -5,7 +5,7 @@ export const getAllApps = async () => {
     const res = await Client.get('/apps')
 
     return res.data.apps
-  } catch (e) {
-    throw new Error(e)
+  } catch (err) {
+    throw new Error(err)
   }
 }
