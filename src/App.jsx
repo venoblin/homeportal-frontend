@@ -1,4 +1,4 @@
-import { Router, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getAllApps } from './services/app'
 import HomeRoute from './components/routes/HomeRoute/HomeRoute'
@@ -9,12 +9,12 @@ function App() {
   
   const getApps = async () => {
     const apps = await getAllApps()
+    console.log('hi')
     setApps(apps)
   }
 
   useEffect(() => {
-    getApps()
-    console.log(apps)
+    // getApps()
   })
 
   return (
@@ -23,9 +23,9 @@ function App() {
         <p>HomePortal</p>
       </nav>
 
-      <Router>
+      <Routes>
         <Route path='/' element={<HomeRoute />} />
-      </Router>
+      </Routes>
     </div>
   )
 }
