@@ -16,7 +16,6 @@ function App() {
 
   useEffect(() => {
     getApps()
-    console.log()
   }, [])
 
   return (
@@ -33,7 +32,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path='/' element={<HomeRoute />} />
+        <Route path='/' element={<HomeRoute apps={apps} />} />
         <Route path='/new' element={<NewAppRoute />} />
       </Routes>
     </div>
