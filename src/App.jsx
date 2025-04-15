@@ -25,7 +25,7 @@ function App() {
 
         <div className='links'>
 
-          {location.pathname !== '/new' && 
+          {location.pathname !== '/new' && apps.length > 0 && 
             <Link to='/new'>Add App</Link>
           }
         </div>
