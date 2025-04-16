@@ -1,17 +1,23 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { getAllApps } from './services/app'
+import { AppContext } from './contexts/AppContext'
 import HomeRoute from './components/routes/HomeRoute/HomeRoute'
 import NewAppRoute from './components/routes/NewAppRoute/NewAppRoute'
 import './styles/App.css'
 
 function App() {
+  const hpContext = useContext(AppContext)
   const [apps, setApps] = useState([])
   const location = useLocation()
   
   const getApps = async () => {
-    const apps = await getAllApps()
-    setApps(apps)
+    try {
+      const apps = await hpContext.load(getAllApps)
+      setApps([...apps])
+    } catch (err) {
+      hpContext.showErrorMsg(err.message)
+    }
   }
 
   useEffect(() => {

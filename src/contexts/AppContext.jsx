@@ -8,17 +8,17 @@ export const AppProvider = (props) => {
   const [isError, setIsError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
-  const load = () => {
-    setIsLoading(!isLoading)
+  const load = (promise) => {
+    setIsLoading(currState => !currState)
     
-    return promise.then((res) => {
-      setIsLoading(!isLoading)
+    return promise().then((res) => {
+      setIsLoading(currState => !currState)
 
       return res
-    }).catch(() => {
-      setIsLoading(!isLoading)
+    }).catch((err) => {
+      setIsLoading(currState => !currState)
 
-      throw new Error()
+      showErrorMsg(err.message)
     })
   }
 
