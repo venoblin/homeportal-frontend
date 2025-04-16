@@ -1,11 +1,12 @@
 import { createContext, useState } from 'react'
+import './AppContext.css'
 
 export const AppContext = createContext()
 
 export const AppProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('Error')
 
   const load = () => {
     setIsLoading(!isLoading)
@@ -27,15 +28,22 @@ export const AppProvider = (props) => {
   }
 
   const dismissErrorMsg = () => {
-    setErrorMessage(!Error)
+    setErrorMessage('')
+    setErrorMessage(!isError)
+  }
+
+  const values = {
+    load,
+    showErrorMsg,
+    dismissErrorMsg
   }
 
   return (
-    <AppContext.Provider value={load}>
+    <AppContext.Provider value={values}>
       { props.children }
 
       {isLoading &&
-        <span class="loader"></span>
+        <span className="loader"></span>
       }
       
       {isError && 
