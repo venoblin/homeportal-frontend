@@ -6,11 +6,11 @@ export const AppContext = createContext()
 export const AppProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('Error')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const load = () => {
     setIsLoading(!isLoading)
-
+    
     return promise.then((res) => {
       setIsLoading(!isLoading)
 
