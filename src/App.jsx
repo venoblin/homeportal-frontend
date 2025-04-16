@@ -12,12 +12,8 @@ function App() {
   const location = useLocation()
   
   const getApps = async () => {
-    try {
-      const apps = await hpContext.load(getAllApps)
-      setApps([...apps])
-    } catch (err) {
-      hpContext.showErrorMsg(err.message)
-    }
+    const apps = await hpContext.load(getAllApps)
+    setApps(apps)
   }
 
   useEffect(() => {
@@ -30,7 +26,6 @@ function App() {
         <Link to='/'>HomePortal</Link>
 
         <div className='links'>
-
           {location.pathname !== '/new' && apps.length > 0 && 
             <Link to='/new'>Add App</Link>
           }

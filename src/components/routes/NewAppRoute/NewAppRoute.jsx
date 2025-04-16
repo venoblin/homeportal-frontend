@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { AppContext } from '../../../contexts/AppContext'
 import './NewAppRoute.css'
+import { postApp } from '../../../services/app'
 
 const NewAppRoute = () => {
+  const hpContext = useContext(AppContext)
   const [formState, setFormState] = useState({
     name: '',
     url: '',
@@ -12,12 +15,19 @@ const NewAppRoute = () => {
     const target = evt.target
     setFormState({ ...formState, [target.id]: target.value })
   }
+
+  const onSubmit = async (evt) => {
+    evt.preventDefault()
+    
+    const app = await hpContext.load(() => postApp(formState))
+    console.log(app)
+  }
   
   return (
     <div className='NewAppRoute'>
       <h2>Add new application</h2>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <label htmlFor='name'>Name</label>
         <input 
           id='name'

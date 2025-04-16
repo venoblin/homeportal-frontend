@@ -9,3 +9,13 @@ export const getAllApps = async () => {
     throw new Error(err)
   }
 }
+
+export const postApp = async (payload) => {
+  try {
+    const res = await Client.post('/apps', payload)
+
+    return res
+  } catch (err) {
+    throw new Error(err)
+  }
+}
