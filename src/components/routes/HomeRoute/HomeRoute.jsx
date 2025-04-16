@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import AppCard from '../../AppCard/AppCard'
 import './HomeRoute.css'
 
 const HomeRoute = (props) => {
@@ -7,7 +8,9 @@ const HomeRoute = (props) => {
       <h2>Dashboard</h2>
 
       {props.apps.length ? (
-        <p>Apps</p>
+        props.apps.map(app => (
+          <AppCard key={app.id} app={app} />
+        ))
       ) : (
         <div>
           <p>No apps!</p>
