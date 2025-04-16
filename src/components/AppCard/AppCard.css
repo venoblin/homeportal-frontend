@@ -1,1 +1,6 @@
-/*# sourceMappingURL=AppCard.css.map */
+.AppCard {
+  background-color: black;
+  border-radius: 10px;
+  max-width: 250px;
+  min-height: 250px;
+}/*# sourceMappingURL=AppCard.css.map */

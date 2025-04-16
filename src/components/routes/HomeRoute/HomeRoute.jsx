@@ -8,9 +8,12 @@ const HomeRoute = (props) => {
       <h2>Dashboard</h2>
 
       {props.apps.length ? (
-        props.apps.map(app => (
-          <AppCard key={app.id} app={app} />
-        ))
+        <div className='apps'>
+          {props.apps.map(app => (
+            <AppCard key={app.id} app={app} />
+          ))}
+        </div>
+        
       ) : (
         <div>
           <p>No apps!</p>
