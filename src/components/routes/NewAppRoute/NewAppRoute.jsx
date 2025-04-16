@@ -1,26 +1,31 @@
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContext'
 import './NewAppRoute.css'
 import { postApp } from '../../../services/app'
 
-const NewAppRoute = () => {
+const NewAppRoute = (props) => {
   const hpContext = useContext(AppContext)
-  const [formState, setFormState] = useState({
+  const emptyState = {
     name: '',
     url: '',
-    imagePath: ''
-  })
+    image_path: ''
+  }
+  const [formState, setFormState] = useState(emptyState)
+  const navigate = useNavigate()
 
   const onChangeListener = (evt) => {
     const target = evt.target
-    setFormState({ ...formState, [target.id]: target.value })
+    setFormState({ ...formState, [target.name]: target.value })
   }
 
   const onSubmit = async (evt) => {
     evt.preventDefault()
     
-    const app = await hpContext.load(() => postApp(formState))
-    console.log(app)
+    const res = await hpContext.load(() => postApp(formState))
+    props.setApps(currState => [...currState, res.data.app])
+    setFormState(emptyState)
+    navigate('/')
   }
   
   return (
