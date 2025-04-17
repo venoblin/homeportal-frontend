@@ -9,7 +9,6 @@ import './styles/App.css'
 function App() {
   const hpContext = useContext(AppContext)
   const [apps, setApps] = useState([])
-  const location = useLocation()
   
   const getApps = async () => {
     const apps = await hpContext.load(getAllApps)
@@ -24,12 +23,6 @@ function App() {
     <div className='App'>
       <nav>
         <Link to='/'>HomePortal</Link>
-
-        <div className='links'>
-          {location.pathname !== '/new' && apps.length > 0 && 
-            <Link to='/new'>Add App</Link>
-          }
-        </div>
       </nav>
 
       <Routes>

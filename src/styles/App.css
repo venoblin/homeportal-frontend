@@ -1,1 +1,4 @@
-/*# sourceMappingURL=App.css.map */
+nav {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=App.css.map */

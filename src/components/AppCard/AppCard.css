@@ -1,4 +1,4 @@
-.AppCard {
+.app {
   background-color: black;
   border-radius: 10px;
   max-width: 250px;
@@ -8,6 +8,19 @@
   justify-content: center;
   align-items: center;
 }
-.AppCard img {
+
+img {
   width: 150px;
+}
+
+.edit {
+  max-height: 0;
+  max-width: 0;
+  font-size: 0;
+}
+
+.edit.show {
+  max-height: initial;
+  max-width: initial;
+  font-size: initial;
 }/*# sourceMappingURL=AppCard.css.map */
