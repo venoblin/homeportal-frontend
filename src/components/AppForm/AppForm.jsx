@@ -17,7 +17,7 @@ const AppForm = (props) => {
   const onSubmit = async (evt) => {
     evt.preventDefault()
     
-    if (props.onSubmit) await props.onSubmit()
+    if (props.onSubmit) await props.onSubmit(formState)
     
     setFormState(emptyState)
   }

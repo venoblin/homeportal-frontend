@@ -7,12 +7,19 @@ import './NewAppRoute.css'
 
 const NewAppRoute = (props) => {
   const hpContext = useContext(AppContext)
+  const navigate = useNavigate()
+
+  const onSubmit = async (formState) => {
+    const res = await hpContext.load(() => postApp(formState))
+    props.setApps(currState => [...currState, res.data.app])
+    navigate('/')
+  }
   
   return (
     <div className='NewAppRoute'>
       <h2>Add new application</h2>
 
-      <AppForm />
+      <AppForm onSubmit={onSubmit} />
     </div>
   )
 }
