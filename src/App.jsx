@@ -1,24 +1,9 @@
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react'
-import { getAllApps } from './services/app'
-import { AppContext } from './contexts/AppContext'
+import { Routes, Route, Link } from 'react-router-dom'
 import HomeRoute from './components/routes/HomeRoute/HomeRoute'
 import NewAppRoute from './components/routes/NewAppRoute/NewAppRoute'
 import './styles/App.css'
 
 function App() {
-  const hpContext = useContext(AppContext)
-  const [apps, setApps] = useState([])
-  
-  const getApps = async () => {
-    const apps = await hpContext.load(getAllApps)
-    setApps(apps)
-  }
-
-  useEffect(() => {
-    getApps()
-  }, [])
-
   return (
     <div className='App'>
       <nav>
@@ -26,8 +11,8 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path='/' element={<HomeRoute apps={apps} />} />
-        <Route path='/new' element={<NewAppRoute setApps={setApps} />} />
+        <Route path='/' element={<HomeRoute />} />
+        <Route path='/new' element={<NewAppRoute />} />
       </Routes>
     </div>
   )

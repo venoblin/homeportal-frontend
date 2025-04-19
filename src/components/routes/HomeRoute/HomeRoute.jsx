@@ -1,21 +1,25 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AppContext } from '../../../contexts/AppContext'
 import AppCard from '../../AppCard/AppCard'
 import './HomeRoute.css'
 
-const HomeRoute = (props) => {
+const HomeRoute = () => {
+  const hpContext = useContext(AppContext)
+  
   return (
     <div className='HomeRoute'>
       <h2>Dashboard</h2>
 
-      {props.apps.length ? (
+      {hpContext.apps.length ? (
         <div className='apps-container'>
           <div className='links'>
             <Link to='/new'>Add App</Link>
           </div>
 
           <div className='apps'>
-            {props.apps.map(app => (
-              <AppCard key={app.id} app={app} />
+            {hpContext.apps.map((app, idx) => (
+              <AppCard key={app.id} app={{...app, idx:idx}} />
             ))}
           </div>
         </div>

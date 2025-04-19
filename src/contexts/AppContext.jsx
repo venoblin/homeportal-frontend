@@ -1,9 +1,11 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import { getAllApps } from '../services/app'
 import './AppContext.css'
 
 export const AppContext = createContext()
 
 export const AppProvider = (props) => {
+  const [apps, setApps] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
   const [popupComponent, setPopupComponent] = useState(<p></p>)
@@ -33,7 +35,18 @@ export const AppProvider = (props) => {
     setIsPopup(currState => !currState)
   }
 
+  const getApps = async () => {
+    const apps = await load(getAllApps)
+    setApps(apps)
+  }
+
+  useEffect(() => {
+    getApps()
+  }, [])
+
   const values = {
+    apps,
+    setApps,
     load,
     showPopup
   }
