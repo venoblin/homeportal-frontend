@@ -6,7 +6,7 @@ export const AppContext = createContext()
 export const AppProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
-  const [popupMsg, setPopupMsg] = useState('')
+  const [popupComponent, setPopupComponent] = useState(<p></p>)
 
   const load = (promise) => {
     setIsLoading(currState => !currState)
@@ -18,18 +18,19 @@ export const AppProvider = (props) => {
     }).catch((err) => {
       setIsLoading(currState => !currState)
 
-      showPopup(err.message)
+      showPopup(<p>{err.message}</p>)
     })
   }
 
-  const showPopup = (msg) => {
-    setPopupMsg(msg)
-    setIsPopup(!isPopup)
+  const showPopup = (component, callback) => {
+    setPopupComponent(component)
+    if (callback) callback()
+    setIsPopup(currState => !currState)
   }
 
   const dismissPopup = () => {
-    setPopupMsg('')
-    setPopupMsg(!isPopup)
+    setPopupComponent(<p></p>)
+    setIsPopup(currState => !currState)
   }
 
   const values = {
@@ -39,7 +40,7 @@ export const AppProvider = (props) => {
 
   return (
     <AppContext.Provider value={values}>
-      { props.children }
+      {props.children}
 
       {isLoading &&
         <span className="loader"></span>
@@ -47,7 +48,7 @@ export const AppProvider = (props) => {
       
       {isPopup && 
         <div className='pop-up'>
-          <p>{ popupMsg }</p>
+          {popupComponent}
           <button onClick={dismissPopup}>Ok</button>
         </div>
       }
