@@ -48,6 +48,7 @@ export const AppProvider = (props) => {
     apps,
     setApps,
     load,
+    isPopup,
     showPopup
   }
 

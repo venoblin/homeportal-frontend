@@ -2,11 +2,12 @@ import { useState } from 'react'
 import './AppForm.css'
 
 const AppForm = (props) => {
-  const emptyState = {
+  let emptyState = {
     name: '',
     url: '',
     image_path: ''
   }
+  if (props.app) emptyState = {...emptyState, ...props.app}
   const [formState, setFormState] = useState(emptyState)
 
   const onChangeListener = (evt) => {
@@ -53,7 +54,7 @@ const AppForm = (props) => {
         onChange={onChangeListener}
       />
       
-      <button type='submit'>Add</button>
+      <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
     </form>
   )
 }
