@@ -8,7 +8,6 @@ import './NewAppRoute.css'
 const NewAppRoute = (props) => {
   const hpContext = useContext(AppContext)
   
-  
   return (
     <div className='NewAppRoute'>
       <h2>Add new application</h2>

@@ -17,7 +17,7 @@ const AppForm = (props) => {
   const onSubmit = async (evt) => {
     evt.preventDefault()
     
-    await props.onSubmit()
+    if (props.onSubmit) await props.onSubmit()
     
     setFormState(emptyState)
   }
@@ -44,12 +44,12 @@ const AppForm = (props) => {
         onChange={onChangeListener}
       />
       
-      <label htmlFor='imagePath'>Image Path</label>
+      <label htmlFor='image_path'>Image Path</label>
       <input 
-        id='imagePath'
+        id='image_path'
         name='image_path'
         type='text'
-        value={formState.imagePath}
+        value={formState.image_path}
         onChange={onChangeListener}
       />
       
