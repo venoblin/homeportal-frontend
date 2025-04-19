@@ -24,7 +24,7 @@ const AppForm = (props) => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className='AppForm' onSubmit={onSubmit}>
       <label htmlFor='name'>Name</label>
       <input 
         id='name'
