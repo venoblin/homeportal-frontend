@@ -14,13 +14,9 @@ img {
 }
 
 .edit {
-  max-height: 0;
-  max-width: 0;
-  font-size: 0;
+  opacity: 0;
 }
 
 .AppCard:hover .edit {
-  max-height: initial;
-  max-width: initial;
-  font-size: initial;
+  opacity: 1;
 }/*# sourceMappingURL=AppCard.css.map */
