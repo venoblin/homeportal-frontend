@@ -7,7 +7,13 @@ const AppForm = (props) => {
     url: '',
     image_path: ''
   }
-  if (props.app) emptyState = {...emptyState, ...props.app}
+  if (props.app) {
+    emptyState = {
+      name: props.app.name,
+      url: props.app.url,
+      image_path: props.app.image_path
+    }
+  }
   const [formState, setFormState] = useState(emptyState)
 
   const onChangeListener = (evt) => {

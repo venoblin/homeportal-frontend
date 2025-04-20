@@ -19,3 +19,13 @@ export const postApp = async (payload) => {
     throw new Error(err)
   }
 }
+
+export const patchApp = async (id, payload) => {
+  try {
+    const res = await Client.patch(`/apps/${id}`, payload)
+
+    return res
+  } catch (err) {
+    throw new Error(err)
+  }
+}

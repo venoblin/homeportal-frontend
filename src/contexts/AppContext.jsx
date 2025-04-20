@@ -27,7 +27,6 @@ export const AppProvider = (props) => {
   const showPopup = (component, callback) => {
     document.body.style.overflow = 'hidden'
     setPopupComponent(component)
-    if (callback) callback()
     setIsPopup(currState => !currState)
   }
 
