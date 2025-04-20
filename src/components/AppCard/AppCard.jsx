@@ -8,7 +8,6 @@ import './AppCard.css'
 
 const AppCard = (props) => {
   const hpContext = useContext(AppContext)
-  const [isHovering, setIsHovering] = useState(true)
   const navigate = useNavigate()
 
   const onSubmit = async (formState) => {
@@ -27,7 +26,7 @@ const AppCard = (props) => {
     <div className='AppCard'>
       {!hpContext.isPopup &&
         <button 
-          className={isHovering ? 'edit show' : 'edit'}
+          className='edit'
           onClick={showEditMenu}
         >Edit</button>
       }
