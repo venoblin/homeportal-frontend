@@ -65,7 +65,7 @@ export const AppProvider = (props) => {
       {isPopup && 
         <div className='pop-up'>
           {popupComponent}
-          <button onClick={dismissPopup}>Ok</button>
+          <button className='close' onClick={dismissPopup}>Ok</button>
         </div>
       }
     </AppContext.Provider>

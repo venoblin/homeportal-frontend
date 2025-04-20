@@ -15,5 +15,12 @@
 }
 
 button {
+  cursor: pointer;
+  display: block;
   border: none;
+}
+
+input,
+label {
+  display: block;
 }/*# sourceMappingURL=index.css.map */

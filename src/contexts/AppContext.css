@@ -18,10 +18,11 @@
   }
 }
 .pop-up {
-  background: black;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: 0;
@@ -29,4 +30,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
+}
+.pop-up button.close {
+  margin-top: 2rem;
 }/*# sourceMappingURL=AppContext.css.map */

@@ -17,6 +17,13 @@
 }
 
 button {
+  cursor: pointer;
+  display: block;
   border: none;
+}
+
+input,
+label {
+  display: block;
 }
 
