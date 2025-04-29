@@ -14,6 +14,10 @@ const NewAppRoute = (props) => {
     props.setApps(currState => [...currState, res.data.app])
     navigate('/')
   }
+
+  const cancelHandler = () => {
+    navigate('/')
+  }
   
   return (
     <div className='NewAppRoute'>
@@ -21,7 +25,7 @@ const NewAppRoute = (props) => {
 
       <AppForm onSubmit={onSubmit} />
 
-      <button>Cancel</button>
+      <button onClick={cancelHandler}>Cancel</button>
     </div>
   )
 }
