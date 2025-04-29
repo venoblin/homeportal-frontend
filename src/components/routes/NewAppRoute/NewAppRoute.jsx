@@ -20,6 +20,8 @@ const NewAppRoute = (props) => {
       <h2>Add new application</h2>
 
       <AppForm onSubmit={onSubmit} />
+
+      <button>Cancel</button>
     </div>
   )
 }
