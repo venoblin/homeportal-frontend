@@ -43,9 +43,11 @@ export const AppProvider = (props) => {
 
   const updateApp = (idx, update) => {
     const newApp = {...apps[idx], ...update}
-    apps[idx] = newApp
 
-    return apps
+    const updatedApps = {...apps}
+    updatedApps[idx] = newApp
+    
+    setApps(updatedApps)
   }
 
   useEffect(() => {
