@@ -41,6 +41,13 @@ export const AppProvider = (props) => {
     setApps(apps)
   }
 
+  const updateApp = (idx, update) => {
+    const newApp = {...apps[idx], ...update}
+    apps[idx] = newApp
+
+    return apps
+  }
+
   useEffect(() => {
     getApps()
   }, [])
@@ -50,7 +57,8 @@ export const AppProvider = (props) => {
     setApps,
     load,
     isPopup,
-    showPopup
+    showPopup,
+    updateApp
   }
 
   return (
