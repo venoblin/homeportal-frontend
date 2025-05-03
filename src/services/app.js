@@ -29,3 +29,13 @@ export const patchApp = async (id, payload) => {
     throw new Error(err)
   }
 }
+
+export const deleteApp = async (id) => {
+  try {
+    const res = await Client.delete(`/apps/${id}`)
+
+    return res
+  } catch (err) {
+    throw new Error(err)
+  }
+}
