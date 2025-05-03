@@ -47,7 +47,7 @@ export const AppProvider = (props) => {
     const updatedApps = {...apps}
     updatedApps[idx] = newApp
     
-    setApps(updatedApps)
+    setApps(currState => [...updatedApps])
   }
 
   useEffect(() => {
