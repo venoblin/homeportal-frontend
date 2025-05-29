@@ -60,7 +60,12 @@ const AppForm = (props) => {
         onChange={onChangeListener}
       />
       
-      <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
+      <div className='buttons-container'>
+        <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
+        {props.app && (
+          <button type='button'>Delete</button>
+        )}
+      </div>
     </form>
   )
 }
