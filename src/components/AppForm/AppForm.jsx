@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { deleteApp } from '../../services/app'
 import './AppForm.css'
 
 const AppForm = (props) => {
@@ -27,6 +28,11 @@ const AppForm = (props) => {
     if (props.onSubmit) await props.onSubmit(formState)
     
     setFormState(emptyState)
+  }
+
+  const deleteHandler = async (id) => {
+    const res = await deleteApp(id)
+    console.log(res)
   }
 
   return (
@@ -63,7 +69,7 @@ const AppForm = (props) => {
       <div className='buttons-container'>
         <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
         {props.app && (
-          <button type='button'>Delete</button>
+          <button type='button' onClick={() => deleteHandler(props.app.id)}>Delete</button>
         )}
       </div>
     </form>
