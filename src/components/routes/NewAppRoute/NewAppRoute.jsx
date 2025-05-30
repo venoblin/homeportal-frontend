@@ -5,13 +5,16 @@ import { postApp } from '../../../services/app'
 import AppForm from '../../AppForm/AppForm'
 import './NewAppRoute.css'
 
-const NewAppRoute = (props) => {
+const NewAppRoute = () => {
   const hpContext = useContext(AppContext)
   const navigate = useNavigate()
 
   const onSubmit = async (formState) => {
     const res = await hpContext.load(() => postApp(formState))
-    props.setApps(currState => [...currState, res.data.app])
+    hpContext.setApps(currState => [...currState, {
+      ...res.data.app, 
+      idx: hpContext.apps.length
+    }])
     navigate('/')
   }
 
