@@ -38,7 +38,8 @@ export const AppProvider = (props) => {
 
   const getApps = async () => {
     const apps = await load(getAllApps)
-    setApps(apps)
+
+    if (apps) setApps(apps)
   }
 
   const updateApp = (idx, update) => {
