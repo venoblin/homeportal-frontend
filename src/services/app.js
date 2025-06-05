@@ -1,6 +1,6 @@
 import Client from './api'
 
-export const getAllApps = async () => {
+export const GetAllApps = async () => {
   try {
     const res = await Client.get('/apps')
 
@@ -10,7 +10,7 @@ export const getAllApps = async () => {
   }
 }
 
-export const postApp = async (payload) => {
+export const PostApp = async (payload) => {
   try {
     const res = await Client.post('/apps', payload)
 
@@ -20,7 +20,7 @@ export const postApp = async (payload) => {
   }
 }
 
-export const patchApp = async (id, payload) => {
+export const PatchApp = async (id, payload) => {
   try {
     const res = await Client.patch(`/apps/${id}`, payload)
 
@@ -30,7 +30,7 @@ export const patchApp = async (id, payload) => {
   }
 }
 
-export const deleteApp = async (id) => {
+export const DeleteApp = async (id) => {
   try {
     const res = await Client.delete(`/apps/${id}`)
 

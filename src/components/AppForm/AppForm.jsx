@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { deleteApp } from '../../services/app'
+import { DeleteApp } from '../../services/app'
 import './AppForm.css'
 
 const AppForm = (props) => {
@@ -31,7 +31,7 @@ const AppForm = (props) => {
   }
 
   const deleteHandler = async (id) => {
-    const res = await deleteApp(id)
+    const res = await DeleteApp(id)
     console.log(res)
   }
 

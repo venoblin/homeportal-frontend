@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { AppContext } from '../../contexts/AppContext'
-import { patchApp } from '../../services/app'
+import { PatchApp } from '../../services/app'
 import AppForm from '../AppForm/AppForm'
 import defaultLogo from '../../assets/logos/default-logo.png'
 import './AppCard.css'
@@ -11,7 +11,7 @@ const AppCard = (props) => {
   const navigate = useNavigate()
 
   const onSubmit = async (formState) => {
-    const res = await hpContext.load(() => patchApp(props.app.id, formState))
+    const res = await hpContext.load(() => PatchApp(props.app.id, formState))
     hpContext.updateApp(props.app.idx, res.data.app)
     navigate('/')
   }

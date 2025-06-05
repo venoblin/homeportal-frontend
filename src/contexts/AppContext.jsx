@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
-import { getAllApps } from '../services/app'
+import { useNavigate } from 'react-router-dom'
+import { GetAllApps, PostApp } from '../services/app'
 import './AppContext.css'
 
 export const AppContext = createContext()
@@ -9,6 +10,7 @@ export const AppProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
   const [popupComponent, setPopupComponent] = useState(<p></p>)
+  const navigate = useNavigate()
 
   const load = (promise) => {
     setIsLoading(currState => !currState)
@@ -24,7 +26,7 @@ export const AppProvider = (props) => {
     })
   }
 
-  const showPopup = (component, callback) => {
+  const showPopup = (component) => {
     document.body.style.overflow = 'hidden'
     setPopupComponent(component)
     setIsPopup(currState => !currState)
@@ -37,7 +39,7 @@ export const AppProvider = (props) => {
   }
 
   const getApps = async () => {
-    const apps = await load(getAllApps)
+    const apps = await load(GetAllApps, PostApp)
 
     if (apps) setApps(apps)
   }
@@ -51,6 +53,19 @@ export const AppProvider = (props) => {
     console.log(updatedApps)
   }
 
+  const postApp = async (formState) => {
+    try {
+      const res = await load(() => PostApp(formState))
+      setApps(currState => [...currState, {
+        ...res.data.app, 
+        idx: apps.length
+      }])
+      navigate('/')
+    } catch (err) {
+      showPopup(<p>{err.message}</p>)
+    }
+  }
+
   useEffect(() => {
     getApps()
   }, [])
@@ -61,6 +76,7 @@ export const AppProvider = (props) => {
     load,
     isPopup,
     showPopup,
+    postApp,
     updateApp
   }
 
