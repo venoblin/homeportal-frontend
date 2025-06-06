@@ -69,9 +69,10 @@ export const AppProvider = (props) => {
   const deleteApp = async (app) => {
     try {
       await load(() => DeleteApp(app.id))
-      const newApps = apps.splice(app.idx, 1)
+      const newApps = [...apps]
+      newApps.splice(app.idx, 1)
       setApps(newApps)
-      navigate('/')
+      dismissPopup()
     } catch (err) {
       showPopup(<p>{err.message}</p>)
     }
