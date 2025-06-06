@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GetAllApps, PostApp } from '../services/app'
+import { DeleteApp, GetAllApps, PostApp } from '../services/app'
 import './AppContext.css'
 
 export const AppContext = createContext()
@@ -66,6 +66,17 @@ export const AppProvider = (props) => {
     }
   }
 
+  const deleteApp = async (app) => {
+    try {
+      await load(() => DeleteApp(app.id))
+      const newApps = apps.splice(app.idx, 1)
+      setApps(newApps)
+      navigate('/')
+    } catch (err) {
+      showPopup(<p>{err.message}</p>)
+    }
+  }
+
   useEffect(() => {
     getApps()
   }, [])
@@ -77,6 +88,7 @@ export const AppProvider = (props) => {
     isPopup,
     showPopup,
     postApp,
+    deleteApp,
     updateApp
   }
 

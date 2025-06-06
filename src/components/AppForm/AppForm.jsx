@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { DeleteApp } from '../../services/app'
+import { useState, useContext } from 'react'
+import { AppContext } from '../../contexts/AppContext'
 import './AppForm.css'
 
 const AppForm = (props) => {
@@ -16,6 +16,7 @@ const AppForm = (props) => {
     }
   }
   const [formState, setFormState] = useState(emptyState)
+  const hpContext = useContext(AppContext)
 
   const onChangeListener = (evt) => {
     const target = evt.target
@@ -30,9 +31,8 @@ const AppForm = (props) => {
     setFormState(emptyState)
   }
 
-  const deleteHandler = async (id) => {
-    const res = await DeleteApp(id)
-    console.log(res)
+  const deleteHandler = async () => {
+    await hpContext.deleteApp(props.app)
   }
 
   return (
@@ -69,7 +69,7 @@ const AppForm = (props) => {
       <div className='buttons-container'>
         <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
         {props.app && (
-          <button type='button' onClick={() => deleteHandler(props.app.id)}>Delete</button>
+          <button type='button' onClick={() => deleteHandler()}>Delete</button>
         )}
       </div>
     </form>

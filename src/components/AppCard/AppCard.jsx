@@ -10,7 +10,7 @@ const AppCard = (props) => {
   const hpContext = useContext(AppContext)
   const navigate = useNavigate()
 
-  const onSubmit = async (formState) => {
+  const patchHandler = async (formState) => {
     const res = await hpContext.load(() => PatchApp(props.app.id, formState))
     hpContext.updateApp(props.app.idx, res.data.app)
     navigate('/')
@@ -18,7 +18,7 @@ const AppCard = (props) => {
 
   const showEditMenu = () => {
     hpContext.showPopup(
-      <AppForm app={props.app} onSubmit={onSubmit} />
+      <AppForm app={props.app} onSubmit={patchHandler} />
     )
   }
   
