@@ -45,12 +45,16 @@ export const AppProvider = (props) => {
   }
 
   const updateApp = (idx, update) => {
-    const newApp = {...apps[idx], ...update}
+    try {
+      const newApp = {...apps[idx], ...update}
+      const updatedApps = {...apps}
 
-    const updatedApps = {...apps}
-    updatedApps[idx] = newApp
-    
-    console.log(updatedApps)
+      updatedApps[idx] = newApp
+      setApps(updatedApps)
+    } catch (err) {
+      showPopup(<p>{err.message}</p>)
+    }
+
   }
 
   const postApp = async (formState) => {
