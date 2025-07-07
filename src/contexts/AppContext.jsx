@@ -10,6 +10,7 @@ export const AppProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
   const [popupComponent, setPopupComponent] = useState(<p></p>)
+  const [popupBtnText, setPopupBtnText] = useState('Ok')
   const navigate = useNavigate()
 
   const load = (promise) => {
@@ -26,8 +27,14 @@ export const AppProvider = (props) => {
     })
   }
 
-  const showPopup = (component) => {
+  const showPopup = ({component, btnText}) => {
     document.body.style.overflow = 'hidden'
+    if (btnText) {
+      setPopupBtnText(btnText)
+    } else {
+      setPopupBtnText('Ok')
+    }
+    
     setPopupComponent(component)
     setIsPopup(currState => !currState)
   }
@@ -53,7 +60,7 @@ export const AppProvider = (props) => {
       setApps(updatedApps)
       dismissPopup()
     } catch (err) {
-      showPopup(<p>{err.message}</p>)
+      showPopup({component: <p>{err.message}</p>})
     }
   }
 
@@ -66,7 +73,7 @@ export const AppProvider = (props) => {
       }])
       navigate('/')
     } catch (err) {
-      showPopup(<p>{err.message}</p>)
+      showPopup({component: <p>{err.message}</p>})
     }
   }
 
@@ -75,11 +82,11 @@ export const AppProvider = (props) => {
       await load(() => DeleteApp(app.id))
       const updatedApps = [...apps]
       updatedApps.splice(app.idx, 1)
-      
+
       setApps(updatedApps)
       dismissPopup()
     } catch (err) {
-      showPopup(<p>{err.message}</p>)
+      showPopup({component: <p>{err.message}</p>})
     }
   }
 
@@ -109,7 +116,7 @@ export const AppProvider = (props) => {
       {isPopup && 
         <div className='pop-up'>
           {popupComponent}
-          <button className='close' onClick={dismissPopup}>Ok</button>
+          <button className='close' onClick={dismissPopup}>{popupBtnText}</button>
         </div>
       }
     </AppContext.Provider>

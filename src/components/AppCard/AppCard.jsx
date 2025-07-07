@@ -17,9 +17,10 @@ const AppCard = (props) => {
   }
 
   const showEditMenu = () => {
-    hpContext.showPopup(
-      <AppForm app={props.app} onSubmit={patchHandler} />
-    )
+    hpContext.showPopup({
+      component: <AppForm app={props.app} onSubmit={patchHandler} />,
+      btnText: 'Cancel'
+    })
   }
   
   return (
