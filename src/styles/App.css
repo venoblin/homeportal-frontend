@@ -1,4 +1,6 @@
 nav {
   display: flex;
   justify-content: space-between;
+  background: black;
+  padding: 1rem 2rem;
 }/*# sourceMappingURL=App.css.map */
