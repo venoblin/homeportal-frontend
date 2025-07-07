@@ -51,10 +51,10 @@ export const AppProvider = (props) => {
 
       updatedApps[idx] = newApp
       setApps(updatedApps)
+      dismissPopup()
     } catch (err) {
       showPopup(<p>{err.message}</p>)
     }
-
   }
 
   const postApp = async (formState) => {
