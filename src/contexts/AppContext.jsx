@@ -47,9 +47,9 @@ export const AppProvider = (props) => {
   const updateApp = (idx, update) => {
     try {
       const newApp = {...apps[idx], ...update}
-      const updatedApps = {...apps}
-
+      const updatedApps = [...apps]
       updatedApps[idx] = newApp
+
       setApps(updatedApps)
       dismissPopup()
     } catch (err) {
@@ -73,9 +73,10 @@ export const AppProvider = (props) => {
   const deleteApp = async (app) => {
     try {
       await load(() => DeleteApp(app.id))
-      const newApps = [...apps]
-      newApps.splice(app.idx, 1)
-      setApps(newApps)
+      const updatedApps = [...apps]
+      updatedApps.splice(app.idx, 1)
+      
+      setApps(updatedApps)
       dismissPopup()
     } catch (err) {
       showPopup(<p>{err.message}</p>)
