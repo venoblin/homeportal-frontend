@@ -1,12 +1,11 @@
 .AppCard {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 
 .app {
   background-color: #2b2b2b;
   border-radius: 10px;
-  width: 250px;
+  width: 100%;
   min-height: 250px;
   display: flex;
   flex-direction: column;
