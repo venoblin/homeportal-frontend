@@ -67,9 +67,9 @@ const AppForm = (props) => {
       />
       
       <div className='buttons-container'>
-        <button type='submit'>{props.app ? 'Edit' : 'Add'}</button>
+        <button className='success' type='submit'>{props.app ? 'Edit' : 'Add'}</button>
         {props.app && (
-          <button type='button' onClick={() => deleteHandler()}>Delete</button>
+          <button className='danger' type='button' onClick={() => deleteHandler()}>Delete</button>
         )}
       </div>
     </form>

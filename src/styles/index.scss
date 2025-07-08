@@ -18,8 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-button,
-.btn {
+button {
   cursor: pointer;
   display: block;
   border: none;
@@ -38,6 +37,14 @@ button,
   &:hover {
     opacity: 0.9;
   }
+
+  &.danger {
+    background: $dangerColor;
+  }
+
+  &.success {
+    background: $successColor;
+  }
 }
 
 input,
@@ -46,13 +53,27 @@ label {
 }
 
 button,
-.btn,
 a,
 input {
   font-size: 1.1em;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
 a {
-  text-decoration: none;
   color: $primaryColor;
+  text-transform: uppercase;
+  text-decoration: underline;
+  transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+
+  &:hover {
+    background: $primaryColor;
+    color: $bgColor;
+  }
 }
