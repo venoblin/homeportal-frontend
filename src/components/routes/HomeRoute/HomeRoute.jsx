@@ -9,8 +9,6 @@ const HomeRoute = () => {
   
   return (
     <div className='HomeRoute'>
-      <h2>Dashboard</h2>
-
       {hpContext.apps.length ? (
         <div className='apps-container'>
           <div className='links'>
@@ -27,7 +25,7 @@ const HomeRoute = () => {
       ) : (
         <div>
           <p>No apps!</p>
-          <Link to='/new'>Add App</Link>
+          <Link className='btn' to='/new'>Add App</Link>
         </div>
       )}
     </div>

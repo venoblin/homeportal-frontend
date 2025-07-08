@@ -10,10 +10,12 @@ function App() {
         <Link to='/'>HomePortal</Link>
       </nav>
 
-      <Routes>
-        <Route path='/' element={<HomeRoute />} />
-        <Route path='/new' element={<NewAppRoute />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path='/' element={<HomeRoute />} />
+          <Route path='/new' element={<NewAppRoute />} />
+        </Routes>
+      </main>
     </div>
   )
 }
