@@ -16,10 +16,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+button,
+.btn {
   cursor: pointer;
   display: block;
   border: none;
+  text-decoration: none;
+  background: red;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  transition: background 0.1s ease-in-out;
+
+  &:hover {
+    background: black;
+  }
 }
 
 input,

@@ -14,10 +14,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+button,
+.btn {
   cursor: pointer;
   display: block;
   border: none;
+  text-decoration: none;
+  background: red;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  transition: background 0.1s ease-in-out;
+}
+button:hover,
+.btn:hover {
+  background: black;
 }
 
 input,
