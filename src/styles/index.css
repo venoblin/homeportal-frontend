@@ -6,7 +6,7 @@
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
+  color: #F6F7EB;
   background-color: #2b2b2b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,12 +21,17 @@ button,
   border: none;
   text-decoration: none;
   background: #ffc604;
+  color: #2b2b2b;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
   transition: opacity 0.1s ease-in-out;
   font-size: 1.1em;
+}
+button:active,
+.btn:active {
+  color: #2b2b2b;
 }
 button:hover,
 .btn:hover {
