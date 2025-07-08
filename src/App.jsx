@@ -8,12 +8,14 @@ function App() {
     <div className='App'>
       <nav>
         <Link to='/'>HomePortal</Link>
+
+        <Link className='btn' to='/app/new'>Add App</Link>
       </nav>
 
       <main>
         <Routes>
           <Route path='/' element={<HomeRoute />} />
-          <Route path='/new' element={<NewAppRoute />} />
+          <Route path='/app/new' element={<NewAppRoute />} />
         </Routes>
       </main>
     </div>
