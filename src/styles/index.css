@@ -61,7 +61,6 @@ h2 {
 
 a {
   color: #ffc604;
-  text-transform: uppercase;
   text-decoration: underline;
   transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
