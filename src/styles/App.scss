@@ -7,8 +7,10 @@
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 2.5rem;
-  background: $lightBgColor;
+  height: 80px;
+  background: $bgColor;
   border-radius: 2rem;
 }
 

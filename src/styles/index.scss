@@ -10,7 +10,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color: $textColor;
-  background-color: $bgColor;
+  background-color: $lightBgColor;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,7 +30,6 @@ button,
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
   transition: opacity 0.1s ease-in-out;
-  font-size: 1.1em;
 
   &:active {
     color: $bgColor;
@@ -46,3 +45,14 @@ label {
   display: block;
 }
 
+button,
+.btn,
+a,
+input {
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+  color: $primaryColor;
+}

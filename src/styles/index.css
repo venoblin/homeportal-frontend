@@ -7,7 +7,7 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #F6F7EB;
-  background-color: #2b2b2b;
+  background-color: #404040;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +27,6 @@ button,
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
   transition: opacity 0.1s ease-in-out;
-  font-size: 1.1em;
 }
 button:active,
 .btn:active {
@@ -41,4 +40,16 @@ button:hover,
 input,
 label {
   display: block;
+}
+
+button,
+.btn,
+a,
+input {
+  font-size: 1.1em;
+}
+
+a {
+  text-decoration: none;
+  color: #ffc604;
 }/*# sourceMappingURL=index.css.map */
