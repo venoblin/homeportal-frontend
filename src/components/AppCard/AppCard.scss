@@ -1,9 +1,11 @@
+@import "../../styles/vars/vars.scss";
+
 .AppCard {
   width: fit-content;
 }
 
 .app {
-  background-color: black;
+  background-color: $lightBgColor;
   border-radius: 10px;
   width: 250px;
   min-height: 250px;

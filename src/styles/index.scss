@@ -1,3 +1,5 @@
+@import "vars/vars.scss";
+
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +10,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: $bgColor;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,14 +24,15 @@ button,
   display: block;
   border: none;
   text-decoration: none;
-  background: red;
+  background: $primaryColor;
   width: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 10px;
-  transition: background 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+  font-size: 1.1em;
 
   &:hover {
-    background: black;
+    opacity: 0.9;
   }
 }
 
