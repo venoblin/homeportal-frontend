@@ -52,6 +52,16 @@ label {
   display: block;
 }
 
+label {
+  position: absolute;
+  left: -999999px;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
 button,
 a,
 input {

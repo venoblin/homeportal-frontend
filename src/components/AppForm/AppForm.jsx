@@ -42,9 +42,10 @@ const AppForm = (props) => {
         id='name'
         name='name'
         type='text'
+        placeholder='Name'
         value={formState.name}
-        required
         onChange={onChangeListener}
+        required
       />
       
       <label htmlFor='url'>Url</label>
@@ -52,9 +53,10 @@ const AppForm = (props) => {
         id='url'
         name='url'
         type='text'
+        placeholder='URL'
         value={formState.url}
-        required
         onChange={onChangeListener}
+        required
       />
       
       <label htmlFor='image_path'>Image Path</label>
@@ -62,6 +64,7 @@ const AppForm = (props) => {
         id='image_path'
         name='image_path'
         type='text'
+        placeholder='Image'
         value={formState.image_path}
         onChange={onChangeListener}
       />
