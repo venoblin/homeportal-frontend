@@ -1,9 +1,12 @@
+import { ATOM_API } from '../../../global'
 import './AtomRoute.css'
 
 const AtomRoute = () => {
   return (
     <div className='AtomRoute'>
       <h2>Atom</h2>
+
+      <img className='atom-video-feed' src={`${ATOM_API}/video_feed`} alt='Atom video feed' />
     </div>
   )
 }
