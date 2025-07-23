@@ -1,1 +1,2 @@
-export const API_BASE_URL = import.meta.env.VITE_HP_BACKEND
+export const API = import.meta.env.VITE_HP_API
+export const ATOM_API = import.meta.env.VITE_ATOM_API
