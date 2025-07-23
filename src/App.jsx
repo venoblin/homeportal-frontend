@@ -9,6 +9,11 @@ function App() {
     <div className='App'>
       <nav>
         <Link to='/'>HomePortal</Link>
+
+        <div className='links-wrap'>
+          <Link to='/'>Dashboard</Link>
+          <Link to='/atom'>Atom</Link>
+        </div>
       </nav>
 
       <main>

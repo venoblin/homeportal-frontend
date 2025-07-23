@@ -12,6 +12,13 @@ nav {
   border-radius: 1rem;
 }
 
+.links-wrap a {
+  margin-left: 0.5rem;
+}
+.links-wrap a:first-of-type {
+  margin-left: 0;
+}
+
 main {
   padding: 1rem 2rem;
 }
