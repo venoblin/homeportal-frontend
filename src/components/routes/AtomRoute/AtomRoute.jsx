@@ -1,7 +1,13 @@
+import { useEffect } from 'react'
 import { ATOM_API } from '../../../global'
 import './AtomRoute.css'
 
 const AtomRoute = () => {
+
+  const onKeyDown = (evt) => {
+    console.log(evt.key)
+  }
+  
   return (
     <div className='AtomRoute'>
       <h2>Atom</h2>
