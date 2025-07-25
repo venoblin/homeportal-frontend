@@ -4,9 +4,17 @@ import './AtomRoute.css'
 
 const AtomRoute = () => {
 
-  const onKeyDown = (evt) => {
+  const handleKeyDown = (evt) => {
     console.log(evt.key)
   }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
   
   return (
     <div className='AtomRoute'>
