@@ -5,7 +5,20 @@ import './AtomRoute.css'
 const AtomRoute = () => {
 
   const handleKeyDown = (evt) => {
-    console.log(evt.key)
+    switch (evt.key) {
+      case 'w':
+        console.log('North')
+        break
+      case 'a':
+        console.log('West')
+        break
+      case 's':
+        console.log('South')
+        break
+      case 'd':
+        console.log('East')
+        break
+    }
   }
 
   useEffect(() => {
