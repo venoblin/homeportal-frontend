@@ -1,22 +1,23 @@
 import { useEffect } from 'react'
+import { PostCommand } from '../../../services/atom'
 import { ATOM_API } from '../../../global'
 import './AtomRoute.css'
 
 const AtomRoute = () => {
 
-  const handleKeyDown = (evt) => {
+  const handleKeyDown = async (evt) => {
     switch (evt.key) {
       case 'w':
-        console.log('North')
+        await PostCommand({command: 'up'})
         break
       case 'a':
-        console.log('West')
+        await PostCommand({command: 'left'})
         break
       case 's':
-        console.log('South')
+        await PostCommand({command: 'south'})
         break
       case 'd':
-        console.log('East')
+        await PostCommand({command: 'right'})
         break
     }
   }
