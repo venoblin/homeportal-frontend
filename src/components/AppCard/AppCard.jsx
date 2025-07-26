@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import * as cheerio from 'cheerio'
-import axios from 'axios'
 import { AppContext } from '../../contexts/AppContext'
 import { PatchApp } from '../../services/app'
 import AppForm from '../AppForm/AppForm'
@@ -24,32 +22,6 @@ const AppCard = (props) => {
       btnText: 'Cancel'
     })
   }
-
-  const getFaviconUrl = async (websiteUrl) => {
-    try {
-      const { data } = await axios.get(websiteUrl)
-      const $ = cheerio.load(data)
-      let faviconUrl = null
-
-      $('link[rel*="icon"]').each((i, el) => {
-        const href = $(el).attr('href')
-        if (href) {
-          faviconUrl = url.resolve(websiteUrl, href)
-          return false
-        }
-      })
-
-      if (!faviconUrl) {
-        const parsedUrl = new URL(websiteUrl)
-        faviconUrl = `${parsedUrl.origin}/favicon.ico`
-      }
-
-      return faviconUrl
-    } catch (err) {
-      throw new Error(err)
-    }
-  }
-
   
   return (
     <div className='AppCard'>
@@ -57,8 +29,6 @@ const AppCard = (props) => {
         className='edit'
         onClick={showEditMenu}
       >Edit</button>
-      
-      
       
       <a href={props.app.url} target='blank' className='app'>
         <p className='name'>{props.app.name}</p>
