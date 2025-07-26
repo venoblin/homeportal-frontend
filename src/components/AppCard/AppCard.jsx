@@ -26,30 +26,29 @@ const AppCard = (props) => {
   }
 
   const getFaviconUrl = async (websiteUrl) => {
-  try {
-    const { data } = await axios.get(websiteUrl)
-    const $ = cheerio.load(data)
-    let faviconUrl = null
+    try {
+      const { data } = await axios.get(websiteUrl)
+      const $ = cheerio.load(data)
+      let faviconUrl = null
 
-    $('link[rel*="icon"]').each((i, el) => {
-      const href = $(el).attr('href')
-      if (href) {
-        faviconUrl = url.resolve(websiteUrl, href)
-        return false
+      $('link[rel*="icon"]').each((i, el) => {
+        const href = $(el).attr('href')
+        if (href) {
+          faviconUrl = url.resolve(websiteUrl, href)
+          return false
+        }
+      })
+
+      if (!faviconUrl) {
+        const parsedUrl = new URL(websiteUrl)
+        faviconUrl = `${parsedUrl.origin}/favicon.ico`
       }
-    })
 
-    if (!faviconUrl) {
-      const parsedUrl = new URL(websiteUrl)
-      faviconUrl = `${parsedUrl.origin}/favicon.ico`
+      return faviconUrl
+    } catch (err) {
+      throw new Error(err)
     }
-
-    return faviconUrl
-
-  } catch (err) {
-    throw new Error(err)
   }
-}
 
   
   return (
