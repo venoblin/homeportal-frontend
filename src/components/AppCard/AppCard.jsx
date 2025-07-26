@@ -25,12 +25,11 @@ const AppCard = (props) => {
   
   return (
     <div className='AppCard'>
-      {!hpContext.isPopup &&
-        <button 
-          className='edit'
-          onClick={showEditMenu}
-        >Edit</button>
-      }
+      <button 
+        className='edit'
+        onClick={showEditMenu}
+      >Edit</button>
+      
       
       
       <a href={props.app.url} target='blank' className='app'>
