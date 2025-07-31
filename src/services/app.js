@@ -40,11 +40,11 @@ export const DeleteApp = async (id) => {
   }
 }
 
-export const GetHostStats = async () => {
+export const GetHostInfo = async () => {
   try {
     const res = await Client.get('/host')
 
-    return res.data.stats
+    return res.data.host
   } catch (err) {
     throw new Error(err)
   }

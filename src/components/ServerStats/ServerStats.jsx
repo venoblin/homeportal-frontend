@@ -8,8 +8,8 @@ const ServerStats = () => {
   return (
     <div className='ServerStats'>
       <h3>Host</h3>
-      <p>{hpContext.hostStats.host}</p>
-      <p>{hpContext.hostStats.uptime}</p>
+      <p>Hostname: {hpContext.hostInfo.staticHostname}</p>
+      <p>Uptime: {hpContext.hostInfo.uptime}</p>
     </div>
   )
 }
