@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContext'
-import ServerStats from '../../ServerStats/ServerStats'
+import ServerInfo from '../../ServerInfo/ServerInfo'
 import AppCard from '../../AppCard/AppCard'
 import './HomeRoute.css'
 
@@ -13,7 +13,7 @@ const HomeRoute = () => {
     <div className='HomeRoute'>
       <h2>Dashboard</h2>
 
-      <ServerStats />
+      <ServerInfo />
       
       <div className='apps-container'>
         <button onClick={() => {navigate('/new')}}>Add App</button>
