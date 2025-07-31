@@ -39,3 +39,13 @@ export const DeleteApp = async (id) => {
     throw new Error(err)
   }
 }
+
+export const GetHostStats = async () => {
+  try {
+    const res = await Client.get('/host')
+
+    return res.data.stats
+  } catch (err) {
+    throw new Error(err)
+  }
+}

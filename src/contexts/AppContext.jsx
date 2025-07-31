@@ -1,12 +1,13 @@
 import { createContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { DeleteApp, GetAllApps, PostApp } from '../services/app'
+import { DeleteApp, GetAllApps, GetHostStats, PostApp } from '../services/app'
 import './AppContext.css'
 
 export const AppContext = createContext()
 
 export const AppProvider = (props) => {
   const [apps, setApps] = useState([])
+  const [hostStats, setHostStats] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
   const [popupComponent, setPopupComponent] = useState(<p></p>)
@@ -46,9 +47,15 @@ export const AppProvider = (props) => {
   }
 
   const getApps = async () => {
-    const apps = await load(GetAllApps, PostApp)
+    const apps = await load(GetAllApps)
 
-    if (apps) setApps(apps)
+    if (apps) setApps([...apps])
+  }
+
+  const getHostStats = async () => {
+    const stats = await load(GetHostStats)
+
+    if (stats) setHostStats({...stats})
   }
 
   const updateApp = (idx, update) => {
@@ -92,9 +99,11 @@ export const AppProvider = (props) => {
 
   useEffect(() => {
     getApps()
+    getHostStats()
   }, [])
 
   const values = {
+    hostStats,
     apps,
     setApps,
     load,
