@@ -3,3 +3,9 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
+
+.HomeRoute {
+  .ServerInfo {
+    margin: 1rem 0 2rem 0;
+  }
+}
