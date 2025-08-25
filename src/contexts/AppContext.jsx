@@ -119,7 +119,9 @@ export const AppProvider = (props) => {
       {props.children}
 
       {isLoading &&
-        <span className="loader"></span>
+        <div className='loader'>
+          <span></span>
+        </div>
       }
       
       {isPopup && 
