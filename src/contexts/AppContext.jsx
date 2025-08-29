@@ -125,7 +125,7 @@ export const AppProvider = (props) => {
         </div>
       }
       
-      {isPopup && 
+      {isPopup && !isLoading &&
         <div className='pop-up'>
           {popupComponent}
           <button className='close' onClick={dismissPopup}>{popupBtnText}</button>
