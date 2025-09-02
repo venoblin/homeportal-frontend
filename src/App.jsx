@@ -9,11 +9,9 @@ function App() {
   return (
     <div className='App'>
       <nav>
-        <Link to='/'>HomePortal</Link>
+        <Link to='/'>HomePortal - Dashboard</Link>
 
         <div className='links-wrap'>
-          <Link to='/'>Dashboard</Link>
-          <Link to='/atom'>Atom</Link>
         </div>
       </nav>
 
