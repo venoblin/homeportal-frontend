@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from '../../contexts/AppContext'
+import Panel from '../ui/Panel/Panel'
 import './ServerInfo.css'
 
 const ServerInfo = () => {
@@ -7,7 +8,7 @@ const ServerInfo = () => {
   const info = hpContext.hostInfo
   
   return (
-    <div className='ServerInfo'>
+    <Panel className='ServerInfo'>
       <h3>Host</h3>
       <p>Hostname: {info.staticHostname}</p>
       <p>OS: {info.operatingSystem}</p>
@@ -15,7 +16,7 @@ const ServerInfo = () => {
       <p>Motherboard: {`${info.hardwareVendor} ${info.hardwareModel}`}</p>
       <p>CPU: {`${info.modelName} ${info['core(s)PerSocket']}-Core, ${info['cpu(s)']}-Thread`}</p>
       <p>Uptime: {info.uptime}</p>
-    </div>
+    </Panel>
   )
 }
 
