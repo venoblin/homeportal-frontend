@@ -3,8 +3,6 @@
 }
 
 .app {
-  background-color: #2b2b2b;
-  border-radius: 10px;
   width: 100%;
   min-height: 250px;
   display: flex;
