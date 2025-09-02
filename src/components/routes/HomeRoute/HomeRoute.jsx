@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContext'
 import ServerInfo from '../../ServerInfo/ServerInfo'
 import AppCard from '../../AppCard/AppCard'
+import Panel from '../../ui/Panel/Panel'
 import './HomeRoute.css'
 
 const HomeRoute = () => {
@@ -15,7 +16,7 @@ const HomeRoute = () => {
 
       <ServerInfo />
       
-      <div className='apps-container'>
+      <Panel className='apps-container'>
         <button onClick={() => {navigate('/new')}}>Add App</button>
 
         {hpContext.apps.length ? (
@@ -31,7 +32,7 @@ const HomeRoute = () => {
             <p>No apps!</p>
           </div>
         )}
-      </div>
+      </Panel>
     </div>
   )
 }
