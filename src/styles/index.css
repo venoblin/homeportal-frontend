@@ -7,7 +7,7 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #F6F7EB;
-  background-color: #404040;
+  background-color: #000000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +20,7 @@ button {
   border: none;
   text-decoration: none;
   background: #ffc604;
-  color: #2b2b2b;
+  color: #000000;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.25rem 0.5rem;
@@ -28,7 +28,7 @@ button {
   transition: opacity 0.1s ease-in-out;
 }
 button:active {
-  color: #2b2b2b;
+  color: #000000;
 }
 button:hover {
   opacity: 0.9;
@@ -76,5 +76,5 @@ a {
 }
 a:hover {
   background: #ffc604;
-  color: #2b2b2b;
+  color: #000000;
 }/*# sourceMappingURL=index.css.map */
