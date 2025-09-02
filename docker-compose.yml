@@ -1,7 +1,10 @@
 version: '3.8'
+
 services:
   react-app:
     build: .
+    image: homeportal-frontend
+    container_name: homeportal-frontend
     ports:
       - "4001:80"
     restart: unless-stopped
