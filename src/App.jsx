@@ -18,7 +18,25 @@ function App() {
         </div>
         
         <div className='links-wrap'>
-          <Link to='/'>Dashboard</Link>
+          <Link className='link' to='/'>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
+                <defs>
+                  <mask id="SVGoWG3zdla">
+                    <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                      <rect width="40" height="30" x="4" y="6" fill="#555555" rx="3" />
+                      <path d="M24 36v7m8-29L16 28m-6 15h28" />
+                      <circle cx="15" cy="17" r="3" fill="#555555" />
+                      <circle cx="33" cy="25" r="3" fill="#555555" />
+                    </g>
+                  </mask>
+                </defs>
+                <path fill="#989898" d="M0 0h48v48H0z" mask="url(#SVGoWG3zdla)" />
+              </svg>
+              
+              <p>Dashboard</p>
+            </div>
+          </Link>
         </div>
       </nav>
 
