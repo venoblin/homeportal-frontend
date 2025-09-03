@@ -31,10 +31,7 @@ nav {
   margin: auto auto;
 }
 .links-wrap a {
-  margin-left: 0.5rem;
-}
-.links-wrap a:first-of-type {
-  margin-left: 0;
+  margin-bottom: 1rem;
 }
 
 main {

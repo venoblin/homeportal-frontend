@@ -14,7 +14,10 @@ const HomeRoute = () => {
     <div className='HomeRoute'>
       <h1>Dashboard</h1>
 
-      <ServerInfo />
+      <Panel>
+        <h2>Host</h2>
+        <ServerInfo />
+      </Panel>
       
       <Panel className='apps-container'>
         <div className='header'>

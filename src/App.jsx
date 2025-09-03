@@ -3,6 +3,7 @@ import HomeRoute from './components/routes/HomeRoute/HomeRoute'
 import NewAppRoute from './components/routes/NewAppRoute/NewAppRoute'
 import './styles/App.css'
 import AtomRoute from './components/routes/AtomRoute/AtomRoute'
+import HostRoute from './components/routes/HostRoute/HostRoute'
 
 function App() {
   const location = useLocation()
@@ -38,6 +39,25 @@ function App() {
               <p>Dashboard</p>
             </div>
           </Link>
+
+          <Link className={`link ${location.pathname === '/host' && 'active'}`} to='/host'>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width={32} height={32} viewBox="0 0 48 48">
+                <defs>
+                  <mask id="SVGwCY6XcVw">
+                    <g fill="none" stroke="#fff" strokeLinecap="round" strokeWidth={4}>
+                      <path fill="#555555" strokeLinejoin="round" d="M41 4H7a3 3 0 0 0-3 3v34a3 3 0 0 0 3 3h34a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3"></path>
+                      <path d="M4 32h40"></path>
+                      <path strokeLinejoin="round" d="M10 38h1m15 0h12m6-1V27M4 37V27"></path>
+                    </g>
+                  </mask>
+                </defs>
+                <path fill="#989898" d="M0 0h48v48H0z" mask="url(#SVGwCY6XcVw)"></path>
+              </svg>
+              
+              <p>Host</p>
+            </div>
+          </Link>
         </div>
       </nav>
 
@@ -45,6 +65,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomeRoute />} />
           <Route path='/new' element={<NewAppRoute />} />
+          <Route path='/host' element={ <HostRoute /> } />
           <Route path='/atom' element={<AtomRoute />} />
         </Routes>
       </main>
