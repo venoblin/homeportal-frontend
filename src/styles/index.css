@@ -65,8 +65,17 @@ label {
 }
 
 input {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 1rem;
+  outline: none;
+  border: 0.75px solid #262424;
+  background: #171c1b;
+  color: #F6F7EB;
+  transition: border 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+input:focus {
+  border-color: #DEB841;
+  color: #DEB841;
 }
 
 button,

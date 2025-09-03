@@ -76,7 +76,7 @@ const AppForm = (props) => {
         )}
 
         {props.onCancel && (
-          <button className='danger' type='button' onClick={() => props.onCancel()}>Cancel</button>
+          <button type='button' onClick={() => props.onCancel()}>Cancel</button>
         )}
       </div>
     </form>
