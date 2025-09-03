@@ -111,9 +111,12 @@ path {
 .link {
   display: block;
   color: #989898;
+  transition: 0.1s ease-in-out;
 }
 .link.active {
+  opacity: 0.8;
   color: #DEB841;
+  cursor: default;
 }
 .link.active path {
   fill: #DEB841;

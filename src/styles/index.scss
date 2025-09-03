@@ -120,9 +120,12 @@ path {
 .link {
   display: block;
   color: $mutedTextColor;
+  transition: 0.1s ease-in-out;
 
   &.active {
+    opacity: 0.8;
     color: $primaryColor;
+    cursor: default;
 
     path {
       fill: $primaryColor;
