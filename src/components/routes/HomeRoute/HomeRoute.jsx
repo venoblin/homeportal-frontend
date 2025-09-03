@@ -12,12 +12,15 @@ const HomeRoute = () => {
   
   return (
     <div className='HomeRoute'>
-      <h2>Dashboard</h2>
+      <h1>Dashboard</h1>
 
       <ServerInfo />
       
       <Panel className='apps-container'>
-        <button onClick={() => {navigate('/new')}}>Add App</button>
+        <div className='header'>
+          <h2>Apps</h2>
+          <button onClick={() => {navigate('/new')}}>Add App</button>
+        </div>
 
         {hpContext.apps.length ? (
 

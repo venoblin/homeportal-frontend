@@ -9,7 +9,7 @@ const ServerInfo = () => {
   
   return (
     <Panel className='ServerInfo'>
-      <h3>Host</h3>
+      <h2>Host</h2>
       <p>Hostname: {info.staticHostname}</p>
       <p>OS: {info.operatingSystem}</p>
       <p>Kernel: {info.kernel}</p>
