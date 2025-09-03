@@ -33,7 +33,7 @@ button {
   display: block;
   border: none;
   text-decoration: none;
-  background: #ea512d;
+  background: #DEB841;
   color: #171c1b;
   width: -moz-fit-content;
   width: fit-content;
@@ -86,11 +86,11 @@ h2 {
 a {
   padding: 0.5rem;
   border-radius: 15px;
-  color: #ea512d;
+  color: #DEB841;
   text-decoration: none;
   transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 a:hover {
-  background: #ea512d;
+  background: #DEB841;
   color: #171c1b;
 }/*# sourceMappingURL=index.css.map */

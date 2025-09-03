@@ -32,7 +32,7 @@ img {
   color: initial;
 }
 .AppCard:hover .Card {
-  background: #ea512d;
+  background: #DEB841;
 }
 .AppCard:hover .edit {
   opacity: 1;
