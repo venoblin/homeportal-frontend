@@ -21,8 +21,24 @@ img {
   opacity: 0;
 }
 
-.AppCard:hover {
+.Card {
+  background: transparent;
+  transition: background 0.1s ease-in-out;
+}
 
+.AppCard {
+  a:hover {
+    background: initial;
+    color: initial;
+  }
+}
+
+.AppCard:hover {
+  
+  .Card {
+    background: $primaryColor;
+  }
+  
   .edit {
     opacity: 1;
   }

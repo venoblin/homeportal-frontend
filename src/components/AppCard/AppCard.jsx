@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AppContext } from '../../contexts/AppContext'
 import { PatchApp } from '../../services/app'
 import AppForm from '../AppForm/AppForm'
+import Card from '../ui/Card/Card'
 import defaultLogo from '../../assets/logos/default-logo.png'
 import './AppCard.css'
 
@@ -29,11 +30,13 @@ const AppCard = (props) => {
         className='edit'
         onClick={showEditMenu}
       >Edit</button>
-      
-      <a href={props.app.url} target='blank' className='app'>
-        <p className='name'>{props.app.name}</p>
-        <img src={defaultLogo} />
-      </a>
+
+      <Card>
+        <a href={props.app.url} target='blank' className='app'>
+          <p className='name'>{props.app.name}</p>
+          <img src={defaultLogo} />
+        </a>
+      </Card>
     </div>
   )
 }

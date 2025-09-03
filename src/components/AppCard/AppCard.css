@@ -19,6 +19,19 @@ img {
   opacity: 0;
 }
 
+.Card {
+  background: transparent;
+  transition: background 0.1s ease-in-out;
+}
+
+.AppCard a:hover {
+  background: initial;
+  color: initial;
+}
+
+.AppCard:hover .Card {
+  background: #ffc604;
+}
 .AppCard:hover .edit {
   opacity: 1;
 }/*# sourceMappingURL=AppCard.css.map */
