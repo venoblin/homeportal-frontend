@@ -74,6 +74,10 @@ const AppForm = (props) => {
         {props.app && (
           <button className='danger' type='button' onClick={() => deleteHandler()}>Delete</button>
         )}
+
+        {props.onCancel && (
+          <button className='danger' type='button' onClick={() => props.onCancel()}>Cancel</button>
+        )}
       </div>
     </form>
   )

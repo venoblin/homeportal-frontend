@@ -1,11 +1,13 @@
 input {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .buttons-container {
+  margin-top: 2rem;
+  
   button {
     display: inline;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     
     &:last-of-type {
       margin-right: 0;

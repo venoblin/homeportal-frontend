@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContext'
 import AppForm from '../../AppForm/AppForm'
+import Panel from '../../ui/Panel/Panel'
 import './NewAppRoute.css'
 
 const NewAppRoute = () => {
@@ -14,11 +15,11 @@ const NewAppRoute = () => {
   
   return (
     <div className='NewAppRoute'>
-      <h2>Add new application</h2>
+      <h1>Add Application</h1>
 
-      <AppForm onSubmit={(formState => hpContext.postApp(formState))} />
-
-      <button onClick={cancelHandler}>Cancel</button>
+      <Panel>
+        <AppForm onSubmit={(formState => hpContext.postApp(formState))} onCancel={cancelHandler} />
+      </Panel>
     </div>
   )
 }
