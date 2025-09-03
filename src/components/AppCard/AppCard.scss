@@ -19,21 +19,21 @@ img {
 
 .edit {
   opacity: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .Card {
   background: transparent;
   transition: background 0.1s ease-in-out;
-}
-
-.AppCard {
-  a:hover {
-    background: initial;
-    color: initial;
-  }
+  border-top-left-radius: 0;
 }
 
 .AppCard:hover {
+  a {
+    background: initial;
+    color: initial;
+  }
   
   .Card {
     background: $primaryColor;
@@ -41,5 +41,9 @@ img {
   
   .edit {
     opacity: 1;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

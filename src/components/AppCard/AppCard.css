@@ -17,21 +17,26 @@ img {
 
 .edit {
   opacity: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .Card {
   background: transparent;
   transition: background 0.1s ease-in-out;
+  border-top-left-radius: 0;
 }
 
-.AppCard a:hover {
+.AppCard:hover a {
   background: initial;
   color: initial;
 }
-
 .AppCard:hover .Card {
-  background: #ffc604;
+  background: #ea512d;
 }
 .AppCard:hover .edit {
   opacity: 1;
+}
+.AppCard:hover .edit:hover {
+  opacity: 0.8;
 }/*# sourceMappingURL=AppCard.css.map */

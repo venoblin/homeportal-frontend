@@ -15,7 +15,7 @@
 :root {
   font-family: "Poppins-Regular", Helvetica, Arial, sans-serif;
   color: #F6F7EB;
-  background-color: #000000;
+  background-color: #171c1b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,8 +33,8 @@ button {
   display: block;
   border: none;
   text-decoration: none;
-  background: #ffc604;
-  color: #000000;
+  background: #ea512d;
+  color: #171c1b;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.25rem 0.5rem;
@@ -42,10 +42,10 @@ button {
   transition: opacity 0.1s ease-in-out;
 }
 button:active {
-  color: #000000;
+  color: #171c1b;
 }
 button:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 button.danger {
   background: #EF2D56;
@@ -84,11 +84,13 @@ h2 {
 }
 
 a {
-  color: #ffc604;
-  text-decoration: underline;
+  padding: 0.5rem;
+  border-radius: 15px;
+  color: #ea512d;
+  text-decoration: none;
   transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 a:hover {
-  background: #ffc604;
-  color: #000000;
+  background: #ea512d;
+  color: #171c1b;
 }/*# sourceMappingURL=index.css.map */

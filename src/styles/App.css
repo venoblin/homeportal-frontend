@@ -14,7 +14,7 @@ nav {
   left: 0;
   top: 0;
   bottom: 0;
-  background: #1f2029;
+  border-right: 0.75px solid #262424;
 }
 
 .links-wrap a {
