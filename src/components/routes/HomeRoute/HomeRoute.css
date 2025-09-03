@@ -5,6 +5,10 @@
   margin-top: 1rem;
 }
 
+.host .ServerInfo {
+  margin-bottom: 1rem;
+}
+
 .apps-container .header {
   display: flex;
   justify-content: space-between;

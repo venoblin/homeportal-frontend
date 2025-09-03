@@ -95,15 +95,13 @@ h2 {
 }
 
 a {
-  padding: 0.5rem;
-  border-radius: 15px;
   color: #DEB841;
   text-decoration: none;
-  transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: margin 0.1s ease-in-out;
 }
 a:hover {
-  background: #DEB841;
-  color: #171c1b;
+  text-decoration: underline;
+  margin-left: 2px;
 }
 
 path {
@@ -121,6 +119,8 @@ path {
   fill: #DEB841;
 }
 .link:hover {
+  margin-left: 0;
+  text-decoration: none;
   background: none;
   color: #DEB841;
 }

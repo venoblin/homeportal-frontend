@@ -103,15 +103,13 @@ h2 {
 }
 
 a {
-  padding: 0.5rem;
-  border-radius: 15px;
   color: $primaryColor;
   text-decoration: none;
-  transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: margin 0.1s ease-in-out;
 
   &:hover {
-    background: $primaryColor;
-    color: $bgColor;
+    text-decoration: underline;
+    margin-left: 2px;
   }
 }
 
@@ -132,6 +130,8 @@ path {
   }
 
   &:hover {
+    margin-left: 0;
+    text-decoration: none;
     background: none;
     color: $primaryColor;
 

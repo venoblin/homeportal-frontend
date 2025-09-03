@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AppContext } from '../../../contexts/AppContext'
 import ServerInfo from '../../ServerInfo/ServerInfo'
 import AppCard from '../../AppCard/AppCard'
@@ -14,9 +14,10 @@ const HomeRoute = () => {
     <div className='HomeRoute'>
       <h1>Dashboard</h1>
 
-      <Panel>
+      <Panel className='host'>
         <h2>Host</h2>
         <ServerInfo />
+        <Link to='/host'>View More →</Link>
       </Panel>
       
       <Panel className='apps-container'>

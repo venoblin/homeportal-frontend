@@ -30,6 +30,8 @@ img {
 .AppCard:hover a {
   background: initial;
   color: initial;
+  margin-left: 0;
+  text-decoration: none;
 }
 .AppCard:hover .Card {
   background: #DEB841;
