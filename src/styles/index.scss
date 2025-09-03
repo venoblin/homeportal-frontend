@@ -1,5 +1,14 @@
 @import "vars/vars.scss";
 
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('../../public/fonts/Poppins-Regular.ttf');
+}
+@font-face {
+  font-family: 'Mozilla-Regular';
+  src: url('../../public/fonts/MozillaHeadline-Regular.ttf');
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,8 +16,7 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-
+  font-family: 'Poppins-Regular', Helvetica, Arial, sans-serif;
   color: $textColor;
   background-color: $bgColor;
 
