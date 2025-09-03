@@ -1,10 +1,11 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import HomeRoute from './components/routes/HomeRoute/HomeRoute'
 import NewAppRoute from './components/routes/NewAppRoute/NewAppRoute'
 import './styles/App.css'
 import AtomRoute from './components/routes/AtomRoute/AtomRoute'
 
 function App() {
+  const location = useLocation()
   
   return (
     <div className='App'>
@@ -18,12 +19,12 @@ function App() {
         </div>
         
         <div className='links-wrap'>
-          <Link className='link' to='/'>
+          <Link className={`link ${location.pathname === '/' && 'active'}`} to='/'>
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
                 <defs>
                   <mask id="SVGoWG3zdla">
-                    <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <g fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4">
                       <rect width="40" height="30" x="4" y="6" fill="#555555" rx="3" />
                       <path d="M24 36v7m8-29L16 28m-6 15h28" />
                       <circle cx="15" cy="17" r="3" fill="#555555" />

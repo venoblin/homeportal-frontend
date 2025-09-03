@@ -123,6 +123,14 @@ path {
   display: block;
   color: $mutedTextColor;
 
+  &.active {
+    color: $primaryColor;
+
+    path {
+      fill: $primaryColor;
+    }
+  }
+
   &:hover {
     background: none;
     color: $primaryColor;

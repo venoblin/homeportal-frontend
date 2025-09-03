@@ -114,6 +114,12 @@ path {
   display: block;
   color: #989898;
 }
+.link.active {
+  color: #DEB841;
+}
+.link.active path {
+  fill: #DEB841;
+}
 .link:hover {
   background: none;
   color: #DEB841;
