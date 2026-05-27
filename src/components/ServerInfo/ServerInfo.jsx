@@ -22,9 +22,9 @@ const ServerInfo = (props) => {
       {info.storage && info.storage?.length > 0 &&
         <div className='storage'>
           <p><span>Storage:</span></p>
-            {info.storage?.map((s) =>
+            {info.storage?.map((s, index) =>
               (props.isFull ? (
-                <div className='mount'>
+                <div key={`${s.filesystem}_${index}`} className='mount'>
                   <p>{s.filesystem}</p>
                   <p>{s.size}</p>
                   <p>{s.used}</p>
@@ -34,7 +34,7 @@ const ServerInfo = (props) => {
                 </div>
                 ) : (
                   (s.filesystem === 'mergerfsPool' && 
-                    <div className='mount'>
+                    <div key={`${s.filesystem}_${index}`} className='mount'>
                       <p>{s.filesystem}</p>
                       <p>{s.size}</p>
                       <p>{s.used}</p>
