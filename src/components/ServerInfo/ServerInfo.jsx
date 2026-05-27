@@ -22,30 +22,30 @@ const ServerInfo = (props) => {
       {info.storage && info.storage?.length > 0 &&
         <div className='storage'>
           <p><span>Storage:</span></p>
-            {info.storage?.map((s, index) =>
-              (props.isFull ? (
-                <div key={`${s.filesystem}_${index}`} className='mount'>
-                  <p>{s.filesystem}</p>
-                  <p>{s.size}</p>
-                  <p>{s.used}</p>
-                  <p>{s.avail}</p>
-                  <p>{s.usePct}</p>
-                  <p>{s.mounted}</p>
-                </div>
-                ) : (
-                  (s.filesystem === 'mergerfsPool' && 
-                    <div key={`${s.filesystem}_${index}`} className='mount'>
-                      <p>{s.filesystem}</p>
-                      <p>{s.size}</p>
-                      <p>{s.used}</p>
-                      <p>{s.avail}</p>
-                      <p>{s.usePct}</p>
-                      <p>{s.mounted}</p>
-                    </div>
-                  )
+          {info.storage?.map((s, index) =>
+            (props.isFull ? (
+              <div key={`${s.filesystem}_${index}`} className='mount'>
+                <p>{s.filesystem}</p>
+                <p>{s.size}</p>
+                <p>{s.used}</p>
+                <p>{s.avail}</p>
+                <p>{s.usePct}</p>
+                <p>{s.mounted}</p>
+              </div>
+              ) : (
+                (s.filesystem === 'mergerfsPool' && 
+                  <div key={`${s.filesystem}_${index}`} className='mount'>
+                    <p>{s.filesystem}</p>
+                    <p>{s.size}</p>
+                    <p>{s.used}</p>
+                    <p>{s.avail}</p>
+                    <p>{s.usePct}</p>
+                    <p>{s.mounted}</p>
+                  </div>
                 )
               )
-            )}
+            )
+          )}
         </div>
       }
     </div>
