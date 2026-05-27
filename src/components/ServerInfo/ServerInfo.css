@@ -1,12 +1,12 @@
 .ServerInfo span {
   color: #989898;
 }
-.ServerInfo .mount {
+.ServerInfo .StorageMount {
   display: flex;
 }
-.ServerInfo .mount p {
+.ServerInfo .StorageMount p {
   margin-right: 0.5rem;
 }
-.ServerInfo .mount p:last-of-type {
+.ServerInfo .StorageMount p:last-of-type {
   margin-right: 0;
 }/*# sourceMappingURL=ServerInfo.css.map */

@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { AppContext } from '../../contexts/AppContext'
 import './ServerInfo.css'
+import StorageMount from '../StorageMount/StorageMount'
 
 const ServerInfo = (props) => {
   const hpContext = useContext(AppContext)
@@ -22,26 +23,12 @@ const ServerInfo = (props) => {
       {info.storage && info.storage?.length > 0 &&
         <div className='storage'>
           <p><span>Storage:</span></p>
-          {info.storage?.map((s, index) =>
+          {info.storage?.map((mount, index) =>
             (props.isFull ? (
-              <div key={`${s.filesystem}_${index}`} className='mount'>
-                <p>{s.filesystem}</p>
-                <p>{s.size}</p>
-                <p>{s.used}</p>
-                <p>{s.avail}</p>
-                <p>{s.usePct}</p>
-                <p>{s.mounted}</p>
-              </div>
+                <StorageMount key={`${mount.filesystem}_${index}`} mount={mount} />
               ) : (
-                (s.filesystem === 'mergerfsPool' && 
-                  <div key={`${s.filesystem}_${index}`} className='mount'>
-                    <p>{s.filesystem}</p>
-                    <p>{s.size}</p>
-                    <p>{s.used}</p>
-                    <p>{s.avail}</p>
-                    <p>{s.usePct}</p>
-                    <p>{s.mounted}</p>
-                  </div>
+                (mount.filesystem === 'mergerfsPool' && 
+                  <StorageMount key={`${mount.filesystem}_${index}`} mount={mount} />
                 )
               )
             )
