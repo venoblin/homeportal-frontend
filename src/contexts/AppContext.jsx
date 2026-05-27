@@ -54,9 +54,8 @@ export const AppProvider = (props) => {
 
   const getHostInfo = async () => {
     const info = await load(GetHostInfo)
-    info.uptime = info.uptime.replace('up ', '')
 
-    if (info) setHostInfo({...info})
+    if (info) setHostInfo(info)
   }
 
   const updateApp = (idx, update) => {

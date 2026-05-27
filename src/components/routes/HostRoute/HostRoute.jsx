@@ -5,7 +5,7 @@ const HostRoute = () => {
   return (
     <div className='HostRoute'>
       <h1>Host</h1>
-      <ServerInfo />
+      <ServerInfo isFull={true} />
     </div>
   )
 }

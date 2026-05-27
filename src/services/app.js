@@ -44,7 +44,7 @@ export const GetHostInfo = async () => {
   try {
     const res = await Client.get('/host')
 
-    return res.data.host
+    return res.data
   } catch (err) {
     throw new Error(err)
   }
