@@ -5,15 +5,9 @@
     color: $mutedTextColor;
   }
 
+  .storage-header,
   .StorageMount {
-    display: flex;
-
-    p {
-      margin-right: 0.5rem;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
   }
 }

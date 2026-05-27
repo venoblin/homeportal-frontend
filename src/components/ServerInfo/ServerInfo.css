@@ -1,12 +1,8 @@
 .ServerInfo span {
   color: #989898;
 }
+.ServerInfo .storage-header,
 .ServerInfo .StorageMount {
-  display: flex;
-}
-.ServerInfo .StorageMount p {
-  margin-right: 0.5rem;
-}
-.ServerInfo .StorageMount p:last-of-type {
-  margin-right: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }/*# sourceMappingURL=ServerInfo.css.map */
