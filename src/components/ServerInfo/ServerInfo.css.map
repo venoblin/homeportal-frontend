@@ -1,1 +1,1 @@
-{"version":3,"sources":["ServerInfo.scss","../../styles/vars/vars.scss","ServerInfo.css"],"names":[],"mappings":"AAGE;EACE,cCFa;ACAjB","file":"ServerInfo.css"}
+{"version":3,"sources":["ServerInfo.scss","../../styles/vars/vars.scss","ServerInfo.css"],"names":[],"mappings":"AAGE;EACE,cCFa;ACAjB;AFKE;EACE,aAAA;AEHJ;AFKI;EACE,oBAAA;AEHN;AFKM;EACE,eAAA;AEHR","file":"ServerInfo.css"}
