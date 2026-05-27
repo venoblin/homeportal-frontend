@@ -1,7 +1,16 @@
 .ServerInfo span {
   color: #989898;
 }
-.ServerInfo .storage-header,
+.ServerInfo .storage-headers p,
+.ServerInfo .memory-headers p {
+  text-decoration: underline;
+}
+.ServerInfo .memory-headers,
+.ServerInfo .MemoryInfo {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.ServerInfo .storage-headers,
 .ServerInfo .StorageMount {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

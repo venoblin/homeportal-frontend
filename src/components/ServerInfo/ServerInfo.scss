@@ -5,7 +5,20 @@
     color: $mutedTextColor;
   }
 
-  .storage-header,
+  .storage-headers,
+  .memory-headers {
+    p {
+      text-decoration: underline;
+    }
+  }
+
+  .memory-headers,
+  .MemoryInfo {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .storage-headers,
   .StorageMount {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
